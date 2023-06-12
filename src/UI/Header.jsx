@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 const Header = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleNavbar = () => {
+      setIsExpanded(!isExpanded);
+    };
   return (
-    <div className="bg-gray-200 h-20 flex items-center justify-between w-full">
+    <div className="bg-gray-200 h-20 fixed flex items-center justify-between w-screen">
       <div className="flex items-center ml-28">
         <img className="h-20" src="./logo.png" alt="Logo" srcset="" />
         <div className="p-40 space-x-14">
